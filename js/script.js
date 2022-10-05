@@ -5,11 +5,11 @@ console.log('Wylosowana liczba to: ' + randomNumber);
 let computerMove = 'nieznany ruch';
 
 
-if (computerMove == 1){
+if (randomNumber == 1){
     computerMove = 'kamień';
-}   else if (computerMove == 2){
+}   else if (randomNumber == 2){
     computerMove = 'papier';
-}   else if (computerMove == 3){
+}   else if (randomNumber == 3){
     computerMove = 'nożyce';
 }
 
