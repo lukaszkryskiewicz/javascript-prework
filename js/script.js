@@ -31,3 +31,13 @@ if(playerInput == '1'){
 
 printMessage('Twój ruch to: ' + playerMove);
 
+if( computerMove == playerMove){
+    printMessage('Remis!');
+}   else if (( computerMove == 'kamień' && playerMove == 'papier') || ( computerMove =='papier' && playerMove == "nożyce") || ( computerMove =='nożyce' && playerMove == "kamień")){
+    printMessage('Ty wygrywasz!');
+}   else if ( ( computerMove == 'kamień' && playerMove == 'nożyce') || ( computerMove =='papier' && playerMove == "kamień") || ( computerMove =='nożyce' && playerMove == "papier")){
+    printMessage('Wygrywa komputer!');
+}   else if (playerInput != 1 || playerInput != 2 ||playerInput != 3 ){
+    printMessage('Podałeś złą cyfrę!')
+}
+
