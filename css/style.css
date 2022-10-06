@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+}
+
+.main-title {
+  font-size: 46px;
+  margin: 80px;
+}
+
+.instruction {
+  font-size: 26px;
+  font-style: italic;
+}
+
+.btn {
+  background-color: #00ffff;
+  border-radius: 30%;
+  border: solid #000000 2px;
+  color: #000000;
+  padding: 40px;
+  font-size: 35px;
+  margin: 25px;
+}
+
+.btn:hover {
+  background-color: #0000ff;
+  color: #ffffff;
+}
+
+.btn:active {
+  background-color: blueviolet;
+}
+
+.messages {
+  font-size: 26px;
+  line-height: 2;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGtCQUFBO0FDQUo7O0FER0E7RUFDSSxlQUFBO0VBQ0EsWUFBQTtBQ0FKOztBREdBO0VBQ0ksZUFBQTtFQUNBLGtCQUFBO0FDQUo7O0FER0E7RUFDSSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0FDQUo7O0FESUE7RUFDSSx5QkFBQTtFQUNBLGNBQUE7QUNESjs7QURJQTtFQUNJLDRCQUFBO0FDREo7O0FESUE7RUFDSSxlQUFBO0VBQ0EsY0FBQTtBQ0RKIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */

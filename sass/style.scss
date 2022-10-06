@@ -1,0 +1,39 @@
+
+body {
+    text-align: center;
+}
+
+.main-title {
+    font-size: 46px;
+    margin: 80px;
+}
+
+.instruction {
+    font-size: 26px;
+    font-style: italic;
+}
+
+.btn {
+    background-color: #00ffff;
+    border-radius: 30%;
+    border: solid #000000 2px;
+    color: #000000;
+    padding: 40px;
+    font-size: 35px;
+    margin: 25px;
+
+}
+
+.btn:hover {
+    background-color: #0000ff;
+    color: #ffffff;
+}
+
+.btn:active {
+    background-color: blueviolet;
+}
+
+.messages {
+    font-size: 26px;
+    line-height: 2.0;
+}

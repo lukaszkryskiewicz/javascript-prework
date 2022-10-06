@@ -6,13 +6,19 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<header>
+		<h1 class="main-title">Witaj w grze Kamień-Papier-Nożyce!</h1>
+	</header>
 	<div class="container">
-		<div id="buttons">
-			<button id="play-rock">Kamień</button>
-			<button id="play-paper">Papier</button>
-			<button id="play-scissors">Nożyce</button>
+		<div class="instruction">
+			<p>Zasady są bardzo proste. Wybierz jeden z poniszych przycisków i sprawdź czy wygrałeś!</p>
 		</div>
-		<div id="messages"></div>
+		<div id="buttons">
+			<button id="play-rock" type="button" class="btn">Kamień</button>
+			<button id="play-paper" type="button" class="btn">Papier</button>
+			<button id="play-scissors" type="button" class="btn">Nożyce</button>
+		</div>
+		<div id="messages" class="messages"></div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
