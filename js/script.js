@@ -37,7 +37,7 @@ if( computerMove == playerMove){
     printMessage('Ty wygrywasz!');
 }   else if ( ( computerMove == 'kamień' && playerMove == 'nożyce') || ( computerMove =='papier' && playerMove == "kamień") || ( computerMove =='nożyce' && playerMove == "papier")){
     printMessage('Wygrywa komputer!');
-}   else if (playerInput != 1 || playerInput != 2 ||playerInput != 3 ){
-    printMessage('Podałeś złą cyfrę!')
+}   else {
+    printMessage('Możesz podać tylko liczbę 1 , 2 lub 3!!')
 }
 
