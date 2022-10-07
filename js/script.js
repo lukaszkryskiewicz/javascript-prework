@@ -1,5 +1,18 @@
+let playerScore = 0
+let computerScore = 0;
+
+function printMessage2(msg){
+	let div = document.createElement('div');
+	div.innerHTML = msg;
+	document.getElementById('result').appendChild(div);
+}
+function clearMessages2(){
+	document.getElementById('result').innerHTML = '';
+}
+
 function playGame(playerInput) {
     clearMessages();
+    clearMessages2();
 
     function getMoveName(argMoveId){
         if(argMoveId == 1){
@@ -19,8 +32,10 @@ function playGame(playerInput) {
         if( argComputerMove == argPlayerMove){
             return 'Remis!';
         }   else if (( argComputerMove == 'kamień' && argPlayerMove == 'papier') || ( argComputerMove =='papier' && argPlayerMove == "nożyce") || ( argComputerMove =='nożyce' && argPlayerMove == "kamień")){
+            playerScore++;
             return 'Ty wygrywasz!';
         }   else if ( ( argComputerMove == 'kamień' && argPlayerMove == 'nożyce') || ( argComputerMove =='papier' && argPlayerMove == "kamień") || ( argComputerMove =='nożyce' && argPlayerMove == "papier")){
+            computerScore++;
             return 'Wygrywa komputer!';
         }   else {
             return 'Możesz podać tylko liczbę 1 , 2 lub 3!!';
@@ -43,8 +58,10 @@ function playGame(playerInput) {
     printMessage('Twój ruch to: ' + playerMove);
 
     printMessage(displayResult(computerMove,playerMove));
+    
+    printMessage2('Wynik komputera : ' + computerScore);
+    printMessage2('Twój wynik : ' + playerScore);
 }
-
 
 
 document.getElementById('play-rock').addEventListener('click', function(){
