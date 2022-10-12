@@ -13,15 +13,12 @@ function clearMessages2(){
 }
 
 function getMoveName(argMoveId){
-    let randomNumberPlayer = Math.floor(Math.random() * 3 + 1);
     if(argMoveId == 1){
     return 'kamień';
     } else if (argMoveId == 2){
         return 'papier';
     } else if (argMoveId == 3){
         return 'nożyce';
-    } else if (argMoveId == 4){
-        return getMoveName(randomNumberPlayer);
     } else {
         printMessage('Nie znam ruchu o id ' + argMoveId + '.');
         return 'nieznany ruch';
@@ -29,7 +26,6 @@ function getMoveName(argMoveId){
 }
 
 function displayResult(argComputerMove, argPlayerMove){
-    console.log('moves:', argComputerMove, argPlayerMove);
     if( argComputerMove == argPlayerMove){
         drawScore++
         return 'Remis!';
@@ -46,7 +42,28 @@ function displayResult(argComputerMove, argPlayerMove){
 
 function notFair(playerRandomMove){
     let mathRanNotFair = Math.random();
-    if (playerRandomMove == 'kamień'){
+    if (mathRanNotFair < 0.25){
+        if (playerRandomMove === 'kamień'){
+            computerMove = 'papier';
+        } else if (playerRandomMove === 'papier'){
+            computerMove = 'nożyce';
+        } else computerMove = 'kamień';
+        return displayResult(computerMove, playerRandomMove);
+    } else {
+        let optionToRemove = '';
+        if (playerRandomMove === 'kamień'){
+            optionToRemove = 'papier';
+        } else if (playerRandomMove === 'papier'){
+            optionToRemove = 'nożyce';
+        } else optionToRemove = 'kamień';
+
+        const allOptions = ['kamień', 'papier', 'nożyce'];
+        const optionToPick = allOptions.filter(option => option !== optionToRemove);
+        computerMove = optionToPick[Math.floor(Math.random() * optionToPick.length)];
+        return displayResult(computerMove, playerRandomMove);
+    }
+}
+ /*    if (playerRandomMove == 'kamień'){
         console.log(mathRanNotFair)
         if (mathRanNotFair < 0.25){
             computerMove = 'papier';
@@ -77,7 +94,7 @@ function notFair(playerRandomMove){
         console.log(mathRanNotFair);
         return displayResult(computerMove, playerRandomMove);
     }
-}
+} */
 
 function playGame(playerInput) {
     clearMessages();
@@ -111,8 +128,8 @@ document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
 });
 document.getElementById('random').addEventListener('click', function(){
-    for(let i=0; i<5;){;
-    notFair(getMoveName(4))
-    printResult();
-    i++;}
-});
+    for(let i=0; i<5; i++){
+    let randomNumberPlayer = Math.floor(Math.random() * 3 + 1);
+    notFair(getMoveName(randomNumberPlayer));
+    printResult();}
+})
