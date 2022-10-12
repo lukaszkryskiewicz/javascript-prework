@@ -3,13 +3,12 @@ let computerScore = 0;
 let drawScore = 0;
 let computerMove;
 
-function printMessage2(msg){
-	let div = document.createElement('div');
-	div.innerHTML = msg;
-	document.getElementById('result').appendChild(div);
+function printMessage(msg) {
+    print(msg, 'messages');
 }
-function clearMessages2(){
-	document.getElementById('result').innerHTML = '';
+
+function printResult(msg) {
+    print(msg, 'result');
 }
 
 function getMoveName(argMoveId){
@@ -20,7 +19,7 @@ function getMoveName(argMoveId){
     } else if (argMoveId == 3){
         return 'nożyce';
     } else {
-        printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+        printMessage('Nie znam ruchu o id ' + argMoveId + '.', 'messages');
         return 'nieznany ruch';
     }
 }
@@ -63,60 +62,28 @@ function notFair(playerRandomMove){
         return displayResult(computerMove, playerRandomMove);
     }
 }
- /*    if (playerRandomMove == 'kamień'){
-        console.log(mathRanNotFair)
-        if (mathRanNotFair < 0.25){
-            computerMove = 'papier';
-        } else {
-            const tab = ['kamień', 'nożyce'];
-            const item = tab[Math.floor(Math.random() * tab.length)];
-            computerMove = item;
-        }
-        return displayResult(computerMove, playerRandomMove);
-    } else if (playerRandomMove == 'papier'){
-        if (mathRanNotFair < 0.25){
-            computerMove = 'nożyce';
-        } else {
-            const tab2 = ['kamień', 'papier'];
-            const item2 = tab2[Math.floor(Math.random() * tab2.length)];
-            computerMove = item2;
-        }
-        console.log(mathRanNotFair);
-        return displayResult(computerMove, playerRandomMove);
-    }   else {
-        if (mathRanNotFair < 0.25){
-            computerMove = 'kamień';
-        } else {
-            const tab3 = ['papier', 'nożyce'];
-            const item3 = tab3[Math.floor(Math.random() * tab3.length)];
-            computerMove = item3;
-        }
-        console.log(mathRanNotFair);
-        return displayResult(computerMove, playerRandomMove);
-    }
-} */
 
 function playGame(playerInput) {
-    clearMessages();
+    clear('messages');
     
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('Wylosowana liczba to: ' + randomNumber);
     computerMove = getMoveName(randomNumber);
-    printMessage('Mój ruch to: ' + computerMove);
+    printMessage('Mój ruch to: ' + computerMove, 'messages');
 
     console.log('Gracz wpisał: ' + playerInput);
     let playerMove = getMoveName(playerInput);
-    printMessage('Twój ruch to: ' + playerMove);
-    printMessage(displayResult(computerMove,playerMove));
+    printMessage('Twój ruch to: ' + playerMove, 'messages');
+    printMessage(displayResult(computerMove,playerMove), 'messages');
     
-    printResult();
+    printResultMain();
 }
 
-function printResult (){
-    clearMessages2();
-    printMessage2('Wynik komputera : ' + computerScore);
-    printMessage2('Twój wynik : ' + playerScore);
-    printMessage2('Remis : ' + drawScore);
+function printResultMain (){
+    clear('result');
+    printResult('Wynik komputera : ' + computerScore, 'result');
+    printResult('Twój wynik : ' + playerScore, 'result');
+    printResult('Remis : ' + drawScore, 'result');
 }
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
@@ -131,5 +98,5 @@ document.getElementById('random').addEventListener('click', function(){
     for(let i=0; i<5; i++){
     let randomNumberPlayer = Math.floor(Math.random() * 3 + 1);
     notFair(getMoveName(randomNumberPlayer));
-    printResult();}
+    printResultMain();}
 })
