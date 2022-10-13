@@ -1,17 +1,18 @@
+{ 
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
 let computerMove;
 
-function printMessage(msg) {
+const printMessage = function(msg){
     print(msg, 'messages');
 }
 
-function printResult(msg) {
+const printResult = function(msg){
     print(msg, 'result');
 }
 
-function getMoveName(argMoveId){
+const getMoveName = function(argMoveId){
     if(argMoveId == 1){
     return 'kamień';
     } else if (argMoveId == 2){
@@ -24,9 +25,9 @@ function getMoveName(argMoveId){
     }
 }
 
-function displayResult(argComputerMove, argPlayerMove){
+const displayResult = function(argComputerMove, argPlayerMove){
     if( argComputerMove == argPlayerMove){
-        drawScore++
+        drawScore++;
         return 'Remis!';
     }   else if (( argComputerMove == 'kamień' && argPlayerMove == 'papier') || ( argComputerMove =='papier' && argPlayerMove == "nożyce") || ( argComputerMove =='nożyce' && argPlayerMove == "kamień")){
         playerScore++;
@@ -39,7 +40,7 @@ function displayResult(argComputerMove, argPlayerMove){
     }
 }
 
-function notFair(playerRandomMove){
+const notFair = function(playerRandomMove){
     let mathRanNotFair = Math.random();
     if (mathRanNotFair < 0.25){
         if (playerRandomMove === 'kamień'){
@@ -63,7 +64,7 @@ function notFair(playerRandomMove){
     }
 }
 
-function playGame(playerInput) {
+const playGame = function(playerInput) {
     clear('messages');
     
     let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -79,7 +80,7 @@ function playGame(playerInput) {
     printResultMain();
 }
 
-function printResultMain (){
+const printResultMain = function(){
     clear('result');
     printResult('Wynik komputera : ' + computerScore, 'result');
     printResult('Twój wynik : ' + playerScore, 'result');
@@ -100,3 +101,4 @@ document.getElementById('random').addEventListener('click', function(){
     notFair(getMoveName(randomNumberPlayer));
     printResultMain();}
 })
+}

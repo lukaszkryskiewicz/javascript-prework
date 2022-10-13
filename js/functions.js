@@ -1,9 +1,9 @@
-function print(msg, element){
+const print = function(msg, element){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById(element).appendChild(div);
 }
 
-function clear(element){
+const clear = function(element){
 	document.getElementById(element).innerHTML = '';
 }
